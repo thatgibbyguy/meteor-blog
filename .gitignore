@@ -1,3 +1,14 @@
+# ------------- meteor gitignore
+
+.meteor/local
+.meteor/meteorite
+
+# ------------- OSX gitignore
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
 # Logs
 logs
 *.log
