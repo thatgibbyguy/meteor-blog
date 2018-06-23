@@ -1,9 +1,11 @@
-import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { render } from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { onPageLoad } from "meteor/server-render";
 
-import App from '../imports/ui/App.js';
-
-Meteor.startup(() => {
-  render(<App />, document.getElementById('app'));
+onPageLoad(async sink => {
+  const App = (await import("/imports/ui/App.js")).default;
+  ReactDOM.hydrate(
+    <App from = "client" />,
+    document.getElementById("app")
+  );
 });
