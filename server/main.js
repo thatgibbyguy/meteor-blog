@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
+import { Blog , Categories } from '/lib/collections.js';
 
 const today = new Date();
 
 Meteor.startup(() => {
   // code to run on server at startup
-
   if (Blog.find().count() < 1) {
     Blog.insert({
       title: 'Test Entry',

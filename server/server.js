@@ -2,9 +2,9 @@ import React from "react";
 import { onPageLoad } from "meteor/server-render";
 import { renderToString } from "react-dom/server";
 
-import App from "/imports/ui/App.js";
+import AppContainer from "/imports/ui/containers/AppContainer.js";
 
 onPageLoad(sink => {
-  const html = renderToString( <App from = "server"/> );
+  const html = renderToString( <AppContainer /> );
   sink.renderIntoElementById("app", html);
 });
