@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Blog , Categories } from '/lib/collections.js';
+import { Blog , Categories } from '/imports/api/collections.js';
 
 const today = new Date();
 

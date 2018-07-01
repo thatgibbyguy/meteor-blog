@@ -1,19 +1,33 @@
 import { Meteor } from 'meteor/meteor';
-import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Blog , Categories } from '/lib/collections.js';
+import { Blog , Categories } from '/imports/api/collections.js';
 
 import App from '/imports/ui/App.js';
 
 export default AppContainer = withTracker (() => {
-  const blogHandle = Meteor.isClient ? Meteor.subscribe('blog') : {ready: () => true };
-  const categoryHandle = Meteor.isClient ? Meteor.subscribe('categories') : {ready: () => true};
-  const blogs = Blog.findOne();
-  const categories = Categories.findOne();
+  if (Meteor.isClient) {
+    const blogHandle = Meteor.subscribe('blog');
+    const categoryHandle = Meteor.subscribe('categories');
+
+    if (blogHandle.ready() && categoryHandle.ready()) {
+      const blog = Blog.findOne();
+      const categories = Categories.find().fetch();
+
+      return {
+        blog,
+        categories,
+        from: 'client',
+      }
+    }
+  }
+
+  const blog = Blog.findOne();
+  const categories = Categories.find().fetch();
 
   return {
-    blogs,
+    blog,
     categories,
+    from: 'server',
   }
 
 })(App);

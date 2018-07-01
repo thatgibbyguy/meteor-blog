@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { Categories } from '/lib/collections.js';
+import { Categories } from '/imports/api/collections.js';
 
 Meteor.publish('categories', () => {
-  return Categories.find({
+  return Categories.find({}, {
     fields: Categories.publicFields
   });
 });
