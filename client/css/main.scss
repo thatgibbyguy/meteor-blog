@@ -1,6 +1,17 @@
 // import plygrid
 
 @import "{}/node_modules/plygrid/src/scss/_ply.scss";
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700|Roboto:300,400");
 
 // custom styles go below here.
 // --------------------------------------------------
+
+@import "layout/header";
+
+body {
+  font-family: "Roboto", sans-serif;
+
+  h1,h2,h3,h4,h5 {
+    font-family: "News Cycle", sans-serif;
+  }
+}

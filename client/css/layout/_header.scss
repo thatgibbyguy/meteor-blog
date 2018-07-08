@@ -1,0 +1,12 @@
+// Header styles go here
+
+header {
+  border-top: .3em solid $color-blue;  
+
+  h1 {
+    @extend %uppercase;
+
+    font-weight: bold;
+    font-size: 4em;
+  }
+}
