@@ -1,12 +1,38 @@
 // Header styles go here
 
 header {
-  border-top: .3em solid $color-blue;  
+  &.site-header {
+    background: $color-black;
+    position: sticky;
+    top: 0px;
+    box-shadow: .05em 0 .25em $color-gray-dark;
 
-  h1 {
-    @extend %uppercase;
+    h1 {
+      @extend %uppercase;
 
-    font-weight: bold;
-    font-size: 4em;
+      font-weight: 700;
+      font-size: 1.5em;
+      margin-bottom: 0;
+      text-align: left;
+      color: $color-gray-light;
+      padding: $padding;
+      letter-spacing: .25em;
+    }
+
+    .navbar {
+      border-bottom: 1px solid $color-gray-dark;
+      padding-left: $padding * .5;
+
+      a {
+        @extend %uppercase;
+
+        color: $color-black;
+        letter-spacing: .25em;
+
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
   }
 }

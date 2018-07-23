@@ -14,16 +14,14 @@ export default class App extends Component {
 
   _renderHeader (from) {
     return (
-      <header>
-        <div className="units-container">
-          <h1>Meteor SSR Blog Tutorial ({from})</h1>
-          <nav className="navbar">
-            <ul>
-              <li><a href="" title="Archives">Archives</a></li>
-              <li><a href="" title="Categories">Categories</a></li>
-            </ul>
-          </nav>
-        </div>
+      <header className="site-header">
+        <h1>Meteor SSR Blog Tutorial ({from})</h1>
+        <nav className="navbar">
+          <ul>
+            <li><a href="" title="Archives">Archives</a></li>
+            <li><a href="" title="Categories">Categories</a></li>
+          </ul>
+        </nav>
       </header>
     )
   }
@@ -31,27 +29,29 @@ export default class App extends Component {
   _renderMain (blog, categories) {
     if (blog && categories) {
       return (
-        <main className="units-container">
-          <div className="units-row">
-            <article className="unit-66">
-              <a href={`/blog/${blog.slug}`} className="landing-blog-snippet">
-                <h2>{blog.title}</h2>
-                <figure>
-                  <img src={blog.blogImage} alt={blog.title} />
-                </figure>
-                <p><strong>{blog.introText}</strong></p>
-              </a>
-              <a href={`/blog/${blog.slug}}`} className="btn btn-blue">Read More</a>
+        <main>
+          <div className="units-row split">
+            <article className="unit-auto">
+              <div className="entry-holder">
+                <a href={`/blog/${blog.slug}`} className="landing-blog-snippet">
+                  <h2>{blog.title}</h2>
+                  <figure>
+                    <img src={blog.blogImage} alt={blog.title} />
+                  </figure>
+                  <p><strong>{blog.introText}</strong></p>
+                </a>
+                <a href={`/blog/${blog.slug}}`} className="btn btn-blue">Read More</a>
 
-              <div className="landing-blog-categories">
-                <h4>This Post Covers: </h4>
-                <div className="btn-group width-100">
-                  {this._renderCategories(categories)}
+                <div className="landing-blog-categories">
+                  <h4>This Post Covers: </h4>
+                  <div className="btn-group width-100">
+                    {this._renderCategories(categories)}
+                  </div>
                 </div>
               </div>
             </article>
-            <div className="unit-33">
-              <aside>
+            <div className="unit-auto">
+              <aside className="site-sidebar">
                 <h3>View Other Posts</h3>
               </aside>
             </div>
