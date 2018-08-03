@@ -2,17 +2,17 @@
 
 .entry-holder {
   padding: $padding * 2.5;
+  padding-right: 420px;
 }
 
 .landing-blog-snippet {
   text-decoration: none;
+  display: block;
 
   h2 {
-    @extend %uppercase;
+    @extend %headlines;
+
     font-size: 2.5em;
-    letter-spacing: .1em;
-    border-bottom: 1px solid $color-gray-dark;
-    padding: 0 0 $padding $padding*.5;
   }
 
   figure {
@@ -21,5 +21,26 @@
     img {
       width: 100%;
     }
+  }
+
+  p {
+    color: $color-black;
+    font-weight: normal;
+    margin-top: $margin * 3;
+    font-size: 1em;
+  }
+}
+
+.landing-blog-categories {
+  padding: ($padding * 1.5) $padding;
+  margin-top: $margin * 3;
+  background: $color-white;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+
+  h4 {
+    @extend %headlines;
+
+    font-size: 1.2em;
   }
 }

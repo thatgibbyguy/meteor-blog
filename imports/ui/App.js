@@ -50,11 +50,9 @@ export default class App extends Component {
                 </div>
               </div>
             </article>
-            <div className="unit-auto">
-              <aside className="site-sidebar">
-                <h3>View Other Posts</h3>
-              </aside>
-            </div>
+            <aside className="site-sidebar">
+              <h3>View Other Posts</h3>
+            </aside>
           </div>
         </main>
       );

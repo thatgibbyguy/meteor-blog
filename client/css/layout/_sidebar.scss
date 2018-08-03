@@ -1,0 +1,17 @@
+// Sidebar styles go here.
+
+.site-sidebar {
+  max-width: 400px;
+  width: 100%;
+  background: $color-white;
+  border-left: 1px solid $border-color;
+  padding: $padding * 2;
+
+  position: fixed;
+  right: 0;
+  height: 100%;
+
+  h3 {
+    @extend %headlines;
+  }
+}

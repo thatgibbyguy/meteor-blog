@@ -6,9 +6,11 @@
 // custom styles go below here.
 // --------------------------------------------------
 
+@import "helpers";
 @import "layout/header";
 @import "layout/entries";
-
+@import "layout/sidebar";
+//
 body {
   font-family: "Roboto", sans-serif;
 
@@ -21,4 +23,13 @@ body {
 .app-container {
   position: relative;
   height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }

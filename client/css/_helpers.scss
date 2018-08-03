@@ -1,0 +1,9 @@
+// Helpers go here
+
+%headlines {
+  @extend %uppercase;
+
+  letter-spacing: .1em;
+  border-bottom: 1px solid $color-gray-dark;
+  padding: 0 0 $padding ($padding * .5);
+}
